@@ -1,1 +1,215 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/* Variables */
+/* Mix-ins */
+.block-section {
+  background: linear-gradient(35deg, #006666, #660000);
+  color: #00cccc;
+}
+.hover-effect {
+  color: #660000;
+}
+/* Styling */
+body {
+  background-color: #00cccc;
+  font-family: 'Alice', serif;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(35deg, #006666, #660000);
+  color: #00cccc;
+}
+nav a {
+  text-decoration: none;
+  padding: 2% 5%;
+  color: #00cccc;
+  font-size: 1.5rem;
+}
+nav a:hover {
+  color: #660000;
+}
+#intro {
+  display: flex;
+  margin: 5% 10%;
+  line-height: 2;
+  align-items: center;
+}
+#intro img {
+  border-radius: 30%;
+  width: 40%;
+  height: auto;
+}
+#intro div h1,
+#intro div h2 {
+  text-align: center;
+}
+#intro div p {
+  width: 70%;
+  margin: auto;
+}
+#experience .grid {
+  display: grid;
+}
+#contact {
+  background: linear-gradient(35deg, #006666, #660000);
+  color: #00cccc;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}
+#contact h1 {
+  text-align: center;
+  padding-top: 2%;
+}
+#contact form {
+  width: 75%;
+  margin: 3% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#contact form button {
+  background-color: #660000;
+  color: #00cccc;
+}

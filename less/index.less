@@ -54,6 +54,124 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+/* Variables */
+
+@maincolor: #006666;
+@lightmain: #00cccc;
+@contrastcolor: #660000;
+
+/* Mix-ins */
+
+.block-section {
+	background: linear-gradient(35deg, @maincolor, @contrastcolor);
+	color: @lightmain;
+}
+
+.hover-effect {
+	color: @contrastcolor;
+}
+
+/* Styling */
+
+body {
+	background-color: @lightmain;
+	font-family: 'Alice', serif;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+	.block-section();
+
+	a {
+		text-decoration:none;
+		padding: 2% 5%;
+		color: @lightmain;
+		font-size: 1.5rem;
+	} //end nav a
+
+	a:hover {
+		.hover-effect();
+	}
+} //end nav
+
+#intro {
+	display: flex;
+	margin: 5% 10%;
+	line-height: 2;
+	align-items: center;
+
+	img {
+		border-radius: 30%;
+		width: 40%;
+		height: auto;
+	}
+
+	div {
+
+		h1, h2 {
+			text-align: center;
+		}
+
+		p {
+			width: 70%;
+			margin: auto;
+		}
+	}
+} //end intro
+
+#skills {
+
+} //end skills
+
+#experience {
+
+	.grid {
+		display: grid;
+	}
+
+} //end experience
+
+#contact {
+
+	.block-section();
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+
+	h1 {
+		text-align: center;
+		padding-top: 2%;
+	}
+
+	form {
+		width: 75%;
+		margin: 3% auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		input {
+
+		}
+
+		button {
+			background-color: @contrastcolor;
+			color: @lightmain;
+		}
+	}
+
+
+
+} //end contact
