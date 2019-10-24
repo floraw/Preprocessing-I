@@ -132,84 +132,165 @@ table {
 }
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
+/*My styles begin */
 /* Variables */
-/* Mix-ins */
-.block-section {
-  background: linear-gradient(35deg, #006666, #660000);
+/* Mixins */
+.content-block {
+  background-color: white;
+  color: #006666;
+  padding: 5%;
+  margin: 5%;
+  border-radius: 10%;
+}
+.buttons {
+  background-color: #660000;
   color: #00cccc;
+  margin: 10px 20px;
+  padding: 10px;
+  text-align: center;
+  width: 120px;
+  height: 45px;
+  font-size: 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
 }
-.hover-effect {
-  color: #660000;
+.buttons:hover {
+  opacity: 50%;
+  color: white;
 }
-/* Styling */
+/* General styles */
+html {
+  font-size: 62.5%;
+}
 body {
-  background-color: #00cccc;
+  background: linear-gradient(-35deg, #00cccc, #cc0000);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+  color: #660000;
   font-family: 'Alice', serif;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 3.5rem;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
+.btn {
+  background-color: #660000;
+  color: #00cccc;
+  margin: 10px 20px;
+  padding: 10px;
+  text-align: center;
+  width: 120px;
+  height: 45px;
+  font-size: 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 50%;
+  color: white;
+}
+/* Nav */
 nav {
   display: flex;
   justify-content: flex-end;
-  background: linear-gradient(35deg, #006666, #660000);
-  color: #00cccc;
 }
-nav a {
-  text-decoration: none;
-  padding: 2% 5%;
-  color: #00cccc;
-  font-size: 1.5rem;
-}
-nav a:hover {
-  color: #660000;
-}
+/* Intro */
 #intro {
   display: flex;
   margin: 5% 10%;
-  line-height: 2;
+  line-height: 1.5;
   align-items: center;
 }
 #intro img {
-  border-radius: 30%;
+  border-radius: 10%;
   width: 40%;
   height: auto;
+}
+#intro div {
+  background-color: white;
+  color: #006666;
+  padding: 5%;
+  margin: 5%;
+  border-radius: 10%;
 }
 #intro div h1,
 #intro div h2 {
   text-align: center;
 }
 #intro div p {
-  width: 70%;
+  width: 90%;
   margin: auto;
+  font-size: 1.5rem;
 }
-#experience .grid {
-  display: grid;
+@media (max-width: 515px) {
+  #intro {
+    flex-direction: column-reverse;
+  }
+  #intro img {
+    width: 80%;
+  }
 }
-#contact {
-  background: linear-gradient(35deg, #006666, #660000);
-  color: #00cccc;
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
+/* Content */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
 }
-#contact h1 {
+.flex-container section {
+  width: 40%;
+  background-color: white;
+  color: #006666;
+  padding: 5%;
+  margin: 5%;
+  border-radius: 10%;
+}
+.flex-container #skills h1 {
+  margin-bottom: 10px;
+}
+.flex-container #skills ul {
+  list-style-type: square;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  list-style-position: inside;
+}
+.flex-container #experience h1 {
+  margin-bottom: 10px;
+}
+.flex-container #experience table,
+.flex-container #experience th,
+.flex-container #experience td {
+  border: 1px solid #006666;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+@media (max-width: 515px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .flex-container section {
+    width: 80%;
+  }
+}
+/* Footer */
+footer {
   text-align: center;
-  padding-top: 2%;
+  width: 80%;
+  margin: 5% auto;
 }
-#contact form {
-  width: 75%;
-  margin: 3% auto;
+footer form {
+  width: 100%;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-#contact form button {
-  background-color: #660000;
-  color: #00cccc;
+footer form div {
+  width: 100%;
+  margin: 2%;
 }

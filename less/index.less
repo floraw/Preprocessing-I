@@ -54,124 +54,182 @@ table {
 }
 
 html, body {
-	height: 100%;
+	min-height: 100%;
 }
+
+/*My styles begin */
 
 /* Variables */
 
 @maincolor: #006666;
 @lightmain: #00cccc;
 @contrastcolor: #660000;
+@contrastlight: #cc0000;
 
-/* Mix-ins */
+/* Mixins */
 
-.block-section {
-	background: linear-gradient(35deg, @maincolor, @contrastcolor);
+.content-block {
+	background-color: white;
+	color: @maincolor;
+	padding: 5%;
+	margin: 5%;
+	border-radius: 10%;
+}
+
+.buttons {
+	background-color: @contrastcolor;
 	color: @lightmain;
+	margin: 10px 20px;
+	padding: 10px;
+	text-align: center;
+	width: 120px;
+	height: 45px;
+	font-size: 2rem;
+	border-radius: 10px;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 50%;
+		color: white;
+	}
+
 }
 
-.hover-effect {
-	color: @contrastcolor;
-}
+/* General styles */
 
-/* Styling */
+html {
+	font-size: 62.5%;
+}
 
 body {
-	background-color: @lightmain;
+	background: linear-gradient(-35deg, @lightmain, @contrastlight);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: fixed;
+	color: @contrastcolor;
 	font-family: 'Alice', serif;
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 3.5rem;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
+
+.btn {
+	.buttons();
+}
+
+/* Nav */
 
 nav {
 	display: flex;
 	justify-content: flex-end;
-	.block-section();
+}
 
-	a {
-		text-decoration:none;
-		padding: 2% 5%;
-		color: @lightmain;
-		font-size: 1.5rem;
-	} //end nav a
-
-	a:hover {
-		.hover-effect();
-	}
-} //end nav
+/* Intro */
 
 #intro {
 	display: flex;
 	margin: 5% 10%;
-	line-height: 2;
+	line-height: 1.5;
 	align-items: center;
 
+
+
 	img {
-		border-radius: 30%;
+		border-radius: 10%;
 		width: 40%;
 		height: auto;
 	}
 
 	div {
-
+		.content-block();
 		h1, h2 {
 			text-align: center;
 		}
 
 		p {
-			width: 70%;
+			width: 90%;
 			margin: auto;
+			font-size: 1.5rem;
 		}
 	}
-} //end intro
 
-#skills {
+	@media (max-width: 515px) {
+		flex-direction: column-reverse;
 
-} //end skills
-
-#experience {
-
-	.grid {
-		display: grid;
+		img {
+			width: 80%;
+		}
 	}
 
-} //end experience
+}
 
-#contact {
+/* Content */
 
-	.block-section();
-	width: 100%;
-	position: fixed;
-	bottom: 0px;
+.flex-container {
+	display: flex;
+	justify-content: space-between;
 
-	h1 {
-		text-align: center;
-		padding-top: 2%;
+	section {
+		width: 40%;
+		.content-block();
 	}
 
+	#skills {
+		h1 {
+			margin-bottom: 10px;
+		}
+		ul {
+			list-style-type: square;
+			font-size: 1.5rem;
+			line-height: 1.5;
+			list-style-position: inside;
+		}
+	}
+
+	#experience {
+		h1 {
+			margin-bottom: 10px;
+		}
+		table, th, td {
+			border: 1px solid @maincolor;
+			padding: 10px;
+			font-size: 1.5rem;
+		}
+	}
+
+
+	@media (max-width: 515px) {
+		flex-direction: column;
+
+		section {
+			width: 80%;
+		}
+	}
+}
+
+/* Footer */
+
+footer {
+	text-align: center;
+	width: 80%;
+	margin: 5% auto;
+	
 	form {
-		width: 75%;
-		margin: 3% auto;
+		width: 100%;
+		height: 20vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 
-		input {
-
-		}
-
-		button {
-			background-color: @contrastcolor;
-			color: @lightmain;
+		div {
+			width: 100%;
+			margin: 2%;
 		}
 	}
-
-
-
-} //end contact
+}

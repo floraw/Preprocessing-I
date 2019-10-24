@@ -1,0 +1,126 @@
+/* Variables */
+
+@maincolor: #006666;
+@lightmain: #00cccc;
+@contrastcolor: #660000;
+
+/* Mix-ins */
+
+/* Styling */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: linear-gradient(35deg, @maincolor, @lightmain);
+	color: @contrastcolor;
+	font-family: 'Alice', serif;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+	
+	a {
+		text-decoration:none;
+		padding: 2% 5%;
+		color: @lightmain;
+		font-size: 1.5rem;
+	} //end nav a
+
+} //end nav
+
+#intro {
+	display: flex;
+	margin: 5% 10%;
+	line-height: 2;
+	align-items: center;
+
+	img {
+		border-radius: 30%;
+		width: 40%;
+		height: auto;
+	}
+
+	div {
+
+		h1, h2 {
+			text-align: center;
+		}
+
+		p {
+			width: 90%;
+			margin: auto;
+		}
+	}
+} //end intro
+
+#skills {
+	width: 80%;
+	margin: 5% auto;
+} //end skills
+
+#experience {
+	width: 80%;
+	margin: 5% auto;
+	
+	table {
+		border: solid 2px @contrastcolor;
+		color: @maincolor;
+		width: 100%;
+		
+		tr {
+
+			height: 35px;
+
+			th {
+				font-weight: 600;
+				padding: 5px auto 5px 5px;
+				text-align: left;
+			}
+
+		}
+	}
+
+} //end experience
+
+#contact {
+
+	width: 100%;
+	position: relative;
+	bottom: 0px;
+	margin: 2% 0px 2% 0px;
+
+	h1 {
+		text-align: center;
+		padding-top: 2%;
+	}
+
+	form {
+		width: 75%;
+		margin: 3% auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		input {
+			width: 30%;
+		}
+		
+		button {
+			background-color: @contrastcolor;
+			color: @lightmain;
+		}
+	}
+
+}
