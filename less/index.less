@@ -54,6 +54,182 @@ table {
 }
 
 html, body {
-    height: 100%;
+	min-height: 100%;
 }
 
+/*My styles begin */
+
+/* Variables */
+
+@maincolor: #006666;
+@lightmain: #00cccc;
+@contrastcolor: #660000;
+@contrastlight: #cc0000;
+
+/* Mixins */
+
+.content-block {
+	background-color: white;
+	color: @maincolor;
+	padding: 5%;
+	margin: 5%;
+	border-radius: 10%;
+}
+
+.buttons {
+	background-color: @contrastcolor;
+	color: @lightmain;
+	margin: 10px 20px;
+	padding: 10px;
+	text-align: center;
+	width: 120px;
+	height: 45px;
+	font-size: 2rem;
+	border-radius: 10px;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 50%;
+		color: white;
+	}
+
+}
+
+/* General styles */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: linear-gradient(-35deg, @lightmain, @contrastlight);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: fixed;
+	color: @contrastcolor;
+	font-family: 'Alice', serif;
+}
+
+h1 {
+	font-size: 3.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+.btn {
+	.buttons();
+}
+
+/* Nav */
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* Intro */
+
+#intro {
+	display: flex;
+	margin: 5% 10%;
+	line-height: 1.5;
+	align-items: center;
+
+
+
+	img {
+		border-radius: 10%;
+		width: 40%;
+		height: auto;
+	}
+
+	div {
+		.content-block();
+		h1, h2 {
+			text-align: center;
+		}
+
+		p {
+			width: 90%;
+			margin: auto;
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (max-width: 515px) {
+		flex-direction: column-reverse;
+
+		img {
+			width: 80%;
+		}
+	}
+
+}
+
+/* Content */
+
+.flex-container {
+	display: flex;
+	justify-content: space-between;
+
+	section {
+		width: 40%;
+		.content-block();
+	}
+
+	#skills {
+		h1 {
+			margin-bottom: 10px;
+		}
+		ul {
+			list-style-type: square;
+			font-size: 1.5rem;
+			line-height: 1.5;
+			list-style-position: inside;
+		}
+	}
+
+	#experience {
+		h1 {
+			margin-bottom: 10px;
+		}
+		table, th, td {
+			border: 1px solid @maincolor;
+			padding: 10px;
+			font-size: 1.5rem;
+		}
+	}
+
+
+	@media (max-width: 515px) {
+		flex-direction: column;
+
+		section {
+			width: 80%;
+		}
+	}
+}
+
+/* Footer */
+
+footer {
+	text-align: center;
+	width: 80%;
+	margin: 5% auto;
+	
+	form {
+		width: 100%;
+		height: 20vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		div {
+			width: 100%;
+			margin: 2%;
+		}
+	}
+}
